@@ -1,0 +1,39 @@
+body{
+  background-image: url("http://localhost:8000/images/fondo2.jpg");
+  background-repeat: no-repeat;
+}
+
+#left{
+
+  float: left;
+   width: 50%;
+padding: 110px;
+padding-left: 9%;
+border-radius: 1%;
+}
+#right{
+
+  float: right;
+   width: 50%;
+
+}
+.parallax-container {
+     height: 100px;
+   }
+#log{
+  width: 200px;
+margin: 0 auto;
+color: white;
+}
+#frlog,.label{
+color: white;
+margin: 10 auto;
+width: auto;
+}
+#btnlogin{
+  width: 200px;
+
+}
+#card{
+  width: 93.333%;
+}
