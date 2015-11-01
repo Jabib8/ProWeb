@@ -1,5 +1,5 @@
 body{
-  background-image: url("http://localhost:8000/images/fondo2.jpg");
+  background-image: url("http://127.0.0.1/public/img/fondo2.jpg");
   background-repeat: no-repeat;
 
 }
@@ -33,7 +33,7 @@ margin: 10 auto;
 width: auto;
 }
 #btnlogin{
-  width: 200px;
+  width: 100px;
 
 }
 #card{
