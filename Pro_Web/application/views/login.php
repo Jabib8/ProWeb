@@ -16,32 +16,35 @@
 
           <div id="left" class="card-panel teal lighten-4" >
             <h3 id="log" > Login </h3>
+             <?= form_open('login'); ?>
             <form id="frlog" class="col s12"  action="" method="get">
               <div class="row">
            <div class="row">
              <div class="input-field col s12">
              <i class="material-icons prefix">account_circle</i>
-             <input id="name" name="user" type="text" class="validate">
-             <label for="name">User</label>
+             <input id="email" name="email" type="email" class="validate" required>
+             <label for="email" data-error="wrong" data-success="right">Email</label>
            </div>
          </div>
            <div class="row">
              <div class="input-field col s8">
              <i class="material-icons prefix">lock_open</i>
-             <input id="pass" name="pass" type="password" class="validate">
+             <input id="pass" name="pass" type="password" class="validate" required>
              <label id="label" for="pass">Password</label>
            </div>
          </div>
 
          <div class="row">
            <div class="input-field col s12">
-             <button id="btnlogin" class="btn waves-effect waves-light" type="submit" name="action">Log in
+             <button id="btnlogin" class="btn waves-effect waves-light" type="submit" name="action">Go!
          <i class="material-icons right">send</i>
        </button>
          </div>
        </div>
           </div>
             </form>
+            <?= form_close(); ?>
+           <?= validation_errors(); ?>
           </div>
 
   <div id="right" >
