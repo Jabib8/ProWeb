@@ -1,6 +1,6 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
-class createAccount extends CI_Controller {
+class user extends CI_Controller {
 
 	/**
 	 * Index Page for this controller.
@@ -22,7 +22,23 @@ class createAccount extends CI_Controller {
 
 		$this->load->view('createAccount');
 	}
+	 public function create()
+	{
+			$this->load->model('user_model', 'user');
+		$name = $this->input->post('name');
+		$last_name = ($this->input->post('last_name'));
+		$email = ($this->input->post('email'));
+		$pass = ($this->input->post ('pass'));
+		$this->user->create($name, $last_name,$email,$pass);
+	echo $id= 	$this->user->getMaxid();
+		$this->user->correoVerificar($email,$name,$id);
+	}
 
+public function check($id)
+{
+	$this->load->model('user_model', 'user');
+	$this->user->updateCheck($id);
+}
 }
 
 /* End of file welcome.php */

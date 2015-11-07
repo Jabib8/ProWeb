@@ -21,8 +21,8 @@ class login extends CI_Controller {
     if ($this->session->userdata('id_user') == false) :
 
     //Validar los campos del formulario
-    #$this->form_validation->set_rules('email', 'Email', 'required|trim|xss_clean');
-    #$this->form_validation->set_rules('pass', 'Password', 'required|trim|xss_clean');
+    $this->form_validation->set_rules('email', 'Email', 'required|trim|xss_clean');
+    $this->form_validation->set_rules('pass', 'Password', 'required|trim|xss_clean');
 
     if ($this->form_validation->run() == false) :
       $this->load->view('login');

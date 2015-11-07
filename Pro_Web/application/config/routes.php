@@ -41,7 +41,7 @@
 $route['default_controller'] = "welcome";
 $route['404_override'] = '';
 $route['login'] = "login/index/";
-$route['createAccount'] = "createAccount/index/";
+$route['createAccount'] = "user/";
 
 /* End of file routes.php */
 /* Location: ./application/config/routes.php */

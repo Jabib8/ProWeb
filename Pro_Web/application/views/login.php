@@ -36,7 +36,7 @@
 
          <div class="row">
            <div class="input-field col s12">
-             <button id="btnlogin" class="btn waves-effect waves-light" type="submit" name="action">Go!
+             <button id="btnlogin" class="btn waves-effect waves-light"  name="action">Go!
          <i class="material-icons right">send</i>
        </button>
          </div>
@@ -62,7 +62,7 @@
                      Simple but complete.</p>
                 </div>
                 <div class="card-action">
-                  <a href="<?= base_url()?>createAccount">Create a new account?</a>
+                  <a href="<?= base_url()?>user">Create a new account?</a>
                 </div>
               </div>
             </div>

@@ -26,13 +26,9 @@ class login_model extends CI_Model {
 		 $this->db->where('password', $pass);
      $this->db->where('checked', true);
      $query = $this->db->get('users');
-
      if ($query->num_rows() == 0) :
-       //usuario no existe
-			   echo "Usuario o contraseña incorrecta";
        return 0;
      else :
-
        return 1;
      endif;
    }

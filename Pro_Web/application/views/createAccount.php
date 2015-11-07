@@ -15,30 +15,36 @@
         <script type="text/javascript" src="<?= base_url()?>public/js/login.js"></script>
 
         <div class="row">
-            <form class="col s6">
+            <form class="col s6" method="post" action="user/create">
               <div class="row">
                 <div class="input-field col s6">
                   <i class="material-icons prefix">person_pin</i>
-                  <input id="name" type="text" class="validate" required="hi">
+                  <input name="name" type="text" class="validate" required="hi">
                   <label for="name">Name</label>
                 </div>
                 <div class="input-field col s6">
-                  <input id="last_name"  type="text" class="validate" required>
+                  <input name="last_name"  type="text" class="validate" required>
                   <label for="last_name" >Last Name</label>
                 </div>
-                <div class="input-field col s12">
+                <div class="input-field col s9">
                     <i class="material-icons prefix">email</i>
-           <input id="email" type="email" class="validate" required>
+           <input name="email" type="email" class="validate" required>
            <label for="email" data-error="wrong" data-success="right">Email</label>
          </div>
+         <div class="row">
+           <div class="input-field col s7">
+           <i class="material-icons prefix">lock_open</i>
+           <input id="pass" name="pass" type="password" class="validate" required>
+           <label id="label" for="pass">Password</label>
+         </div>
+       </div>
          <div class="input-field col s12 center">
-         <button class="btn waves" type="submit" action="post" name="action">Create
+         <button class="btn waves" type="submit"  name="action">Create
      <i class="material-icons right">send</i>
           </button>
         </div>
               </div>
             </form>
           </div>
-
       </body>
   </html>
