@@ -13,6 +13,7 @@
         <script src="<?= base_url()?>public/js/materialize.min.js"></script>
         <script src="<?= base_url()?>public/js/materialize.js"></script>
         <script type="text/javascript" src="<?= base_url()?>public/js/login.js"></script>
+        <?php # echo $session_id = $this->session->userdata('id'); ?>
 
         <div class="row">
             <form class="col s6" method="post" action="user/create">

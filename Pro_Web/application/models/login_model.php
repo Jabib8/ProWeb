@@ -27,9 +27,9 @@ class login_model extends CI_Model {
      $this->db->where('checked', true);
      $query = $this->db->get('users');
      if ($query->num_rows() == 0) :
-       return 0;
+       return null;
      else :
-       return 1;
+       return $query->row();
      endif;
    }
 

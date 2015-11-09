@@ -16,7 +16,7 @@
 
           <div id="left" class="card-panel teal lighten-4" >
             <h3 id="log" > Login </h3>
-             <?= form_open('login'); ?>
+             <?= form_open('login/login'); ?>
             <form id="frlog" class="col s12"  action="" method="get">
               <div class="row">
            <div class="row">
