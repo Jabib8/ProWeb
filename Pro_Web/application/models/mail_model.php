@@ -1,5 +1,5 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
-class user_model extends CI_Model {
+class mail_model extends CI_Model {
 
 
 	 function __construct() {
@@ -7,20 +7,20 @@ class user_model extends CI_Model {
 
    }
 
-public function create($name, $last_name,$email,$pass)
+public function create($issue, $recipent,$content,$id_user)
 {
   $data = array(
-      'name_user' => $name,
-      'last_name' => $last_name,
-      'email' => $email,
-      'password' => $pass,
-      'checked' => false,
+      'user_id' => $id_user,
+      'issue' => $issue,
+      'recipent' => $recipent,
+      'content' => $content,
+      'state' => 'pending',
 
       );
-  $this->db->insert('users',$data);
+  $this->db->insert('mail',$data);
 
-  #function correoVerificar($email);
 }
+/*
 public function correoVerificar($mail,$name,$id)
 {
 
@@ -58,4 +58,5 @@ public function updateCheck($id)
 $this->db->where('id_user', $id);
 $this->db->update('users', $data);
 }
+*/
 }

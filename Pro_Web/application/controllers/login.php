@@ -11,6 +11,10 @@ $this->load->library('session');
     $this->load->model('login_model');
     $this->load->helper('form');
     $this->load->library(array('session','form_validation'));
+    $data = array(
+      'login'=> false
+    );
+    $this->session->set_userdata($data);
   }
 
   public function index(){
@@ -48,7 +52,7 @@ if ($ingreso!=null) {
           'login'=> true
         );
         $this->session->set_userdata($data);
-        header("Location: http://localhost/user");
+        header("Location: http://localhost/dashboard");
         break;
 
     }

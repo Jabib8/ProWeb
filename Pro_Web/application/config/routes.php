@@ -10,7 +10,7 @@
 | URL normally follow this pattern:
 |
 |	example.com/class/method/id/
-| 
+|
 | In some instances, however, you may want to remap this relationship
 | so that a different class/function is called than the one
 | corresponding to the URL.
@@ -38,10 +38,11 @@
 |
 */
 
-$route['default_controller'] = "welcome";
+$route['default_controller'] = "login";
 $route['404_override'] = '';
 $route['login'] = "login/index/";
 $route['user'] = "user";
+$route['mail'] = "mail";
 #$route['dashboard'] = "dashboard";
 
 /* End of file routes.php */
