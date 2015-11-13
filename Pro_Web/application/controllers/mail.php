@@ -34,4 +34,11 @@ class mail extends CI_Controller {
     $id_user=$this->session->userdata('id');
 		$this->mail->create($issue, $recipent,$content,$id_user);
 	}
+	public function getMailSent()
+	{
+	$this->load->model('mail_model', 'mail');
+	$id=$this->session->userdata('id');
+	$datos['mail'] =$this->mail->getMailSent($id);
+	$this->load->view('dashboard', $datos);
+	}
 }

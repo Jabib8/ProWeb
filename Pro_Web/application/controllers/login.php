@@ -52,7 +52,7 @@ if ($ingreso!=null) {
           'login'=> true
         );
         $this->session->set_userdata($data);
-        header("Location: http://localhost/dashboard");
+        header("Location: http://localhost/mail/getMailSent");
         break;
 
     }

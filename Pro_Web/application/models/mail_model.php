@@ -20,6 +20,14 @@ public function create($issue, $recipent,$content,$id_user)
   $this->db->insert('mail',$data);
 
 }
+public function getMailSent($id)
+{
+	$query = $this->db->query("SELECT id_mail,issue,recipent,content,state FROM mail WHERE user_id=$id and state='sent'");;
+     if( $query->num_rows > 0 )
+       return $query->result();
+     else
+       return FALSE;
+}
 /*
 public function correoVerificar($mail,$name,$id)
 {

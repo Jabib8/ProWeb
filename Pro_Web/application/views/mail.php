@@ -34,7 +34,7 @@
     <div class="row">
       <div class="input-field col s8">
       <i class="material-icons prefix">lock_open</i>
-      <textarea style="font-size:18pt;" id="content" name="content" class="materialize-textarea" required></textarea>
+      <textarea style="font-size:18pt;" id="content" nameh="content" class="materialize-textarea" required></textarea>
       <label style="font-size:18pt;" for="textarea2">Content</label>
       </div>
    </div>

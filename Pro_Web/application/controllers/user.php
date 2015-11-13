@@ -23,9 +23,9 @@ class user extends CI_Controller {
 	 }
 	public function index()
 	{
-		if (!$this->session->userdata('login')) {
-				header("Location: http://localhost/login");
-		}
+		#if (!$this->session->userdata('login')) {
+		#		header("Location: http://localhost/login");
+		#}
 		$this->load->view('createAccount');
 	}
 	 public function create()
@@ -36,7 +36,7 @@ class user extends CI_Controller {
 		$email = ($this->input->post('email'));
 		$pass = ($this->input->post ('pass'));
 		$this->user->create($name, $last_name,$email,$pass);
-	echo $id= 	$this->user->getMaxid();
+	$id= 	$this->user->getMaxid();
 		$this->user->correoVerificar($email,$name,$id);
 	}
 
@@ -45,7 +45,8 @@ public function check($id)
 	$this->load->model('user_model', 'user');
 	$this->user->updateCheck($id);
 }
-}
 
+
+}
 /* End of file welcome.php */
 /* Location: ./application/controllers/welcome.php */

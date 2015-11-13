@@ -58,4 +58,6 @@ public function updateCheck($id)
 $this->db->where('id_user', $id);
 $this->db->update('users', $data);
 }
+
+
 }

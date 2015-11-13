@@ -59,7 +59,8 @@
                 <div class="card-content">
                   <p>This is an email manager.<br>
                      It's easy to use.<br>
-                     Simple but complete.</p>
+                     Simple but complete.<br>
+                     It is free.</p>
                 </div>
                 <div class="card-action">
                   <a href="<?= base_url()?>user">Create a new account?</a>

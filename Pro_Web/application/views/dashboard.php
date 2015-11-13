@@ -14,5 +14,39 @@
       <script src="<?= base_url()?>public/js/materialize.js"></script>
       <script type="text/javascript" src="<?= base_url()?>public/js/login.js"></script>
       <a href="<?= base_url()?>mail">Create?</a>
+
+      <div class="container">
+        <div class="col-md-12">
+          <h1 class="page-header">Sent</h1>
+            <div class="responsive-table">
+              <table class="responsive-table">
+                <thead>
+                  <tr>
+
+                    <th>Issue</th>
+                    <th>Recipent</th>
+                    <th>Content</th>
+                    <th>State</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <?php
+                  if($mail !== FALSE) {
+                    foreach ($mail as $fila) {
+                  ?>
+                   <tr>
+                    
+                      <td><?php echo $fila->issue?></td>
+                      <td><?php echo $fila->recipent?></td>
+                      <td><?php echo $fila->content?></td>
+                      <td><?php echo $fila->state?></td>
+                      <td><a href="localhost/mail/delete/<?php echo $fila->id_mail?>">Eliminar!</a></td>
+                    </tr>
+                  <?php
+                }
+              }
+              ?>
+            </tbody>
+          </table>
     </body>
 </html>
