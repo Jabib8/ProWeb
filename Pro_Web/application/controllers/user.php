@@ -35,7 +35,7 @@ class user extends CI_Controller {
 		$last_name = ($this->input->post('last_name'));
 		$email = ($this->input->post('email'));
 		$pass = ($this->input->post ('pass'));
-		$this->user->create($name, $last_name,$email,$pass);
+		$this->user->create($name, $last_name,$email,md5($pass));
 	$id= 	$this->user->getMaxid();
 		$this->user->correoVerificar($email,$name,$id);
 	}

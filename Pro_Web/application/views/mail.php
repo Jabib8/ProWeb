@@ -13,7 +13,33 @@
       <script src="<?= base_url()?>public/js/materialize.min.js"></script>
       <script src="<?= base_url()?>public/js/materialize.js"></script>
       <script type="text/javascript" src="<?= base_url()?>public/js/login.js"></script>
-      <?php  echo $session_id = $this->session->userdata('id'); ?>
+      <nav>
+        <ul class="left hide-on-med-and-down">
+          <li><a href="<?= base_url()?>mail/getMailSent">Home</a></li>
+          <li><a  href="<?= base_url()?>mail">Create Mail</a></li>
+        </ul>
+        <ul class="right hide-on-med-and-down">
+          <li><a href="<?= base_url()?>login">log out</a></li>
+        </ul>
+        <ul id="slide-out" class="side-nav">
+          <li><a href="<?= base_url()?>mail/getMailSent">Home</a></li>
+          <li><a  href="<?= base_url()?>mail">Create Mail</li>
+          <li><a href="<?= base_url()?>login">log out</a></li>
+        </ul>
+        <a  href="#" data-activates="slide-out" class="button-collapse"><i class="mdi-navigation-menu"></i></a>
+      </nav>
+      <script type="text/javascript">
+      $('.button-collapse').sideNav('show');
+      // Hide sideNav
+      $('.button-collapse').sideNav('hide');
+
+        $('.button-collapse').sideNav({
+            menuWidth: 300,
+            edge: 'left',
+            closeOnClick: true
+          }
+        );
+      </script>
 <fieldset class="flow-text" style=" margin-left: 5%;margin-right: 5%; border: none;">
       <form id="frlog" class="col s6"  action="mail/create" method="post">
         <div class="row">
@@ -34,7 +60,7 @@
     <div class="row">
       <div class="input-field col s8">
       <i class="material-icons prefix">lock_open</i>
-      <textarea style="font-size:18pt;" id="content" nameh="content" class="materialize-textarea" required></textarea>
+      <textarea style="font-size:18pt;" id="content" name="content" class="materialize-textarea" required></textarea>
       <label style="font-size:18pt;" for="textarea2">Content</label>
       </div>
    </div>

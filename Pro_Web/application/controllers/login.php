@@ -35,7 +35,7 @@ $this->load->library('session');
       //Asignar variables a lo obtenido desde el formulario
       $usr = $this->input->post('email');
       $pass = ($this->input->post('pass'));
-      $ingreso = $this->login_model->login($usr, $pass);
+      $ingreso = $this->login_model->login($usr, md5($pass));
       $num=0;
 if ($ingreso!=null) {
   $num=1;

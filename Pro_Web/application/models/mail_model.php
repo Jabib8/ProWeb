@@ -28,6 +28,10 @@ public function getMailSent($id)
      else
        return FALSE;
 }
+public function delete($id)
+{
+	$this->db->delete('mail', array('id_mail' => $id));
+}
 /*
 public function correoVerificar($mail,$name,$id)
 {

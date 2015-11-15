@@ -14,7 +14,7 @@ if (!$this->session->userdata('login')) {
   }
 
   public function index(){
-  $this->load->view('dashboard');
+  header("Location: http://localhost/mail/getMailSent");
   }
 
 }
