@@ -1,0 +1,27 @@
+@media only screen and (max-width: 1366px) and (min-width: 981px) {
+	#select
+	{
+		display: none;
+	}
+
+}
+
+@media only screen and (max-width: 980px) and (min-width: 320px) {
+
+	#table_sent{
+	display: none;
+	}
+
+	#select{
+		font-size: 25px;
+		border-radius: 0;
+		border: none;
+		background: #EEE8AA;
+		overflow: hidden;
+		padding-top: 15px;
+		height: 70px;
+		text-indent: 10px;
+		color: black;
+	}
+
+}

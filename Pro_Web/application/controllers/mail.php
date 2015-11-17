@@ -46,6 +46,6 @@ class mail extends CI_Controller {
 	{
 			$this->load->model('mail_model', 'mail');
 	$this->mail->delete($id);
-	  header("Location: http://localhost/mail/getMailSent");
+	  header("Location: http://localhost/dashboard");
 	}
 }

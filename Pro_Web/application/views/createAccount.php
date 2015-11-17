@@ -14,7 +14,29 @@
         <script src="<?= base_url()?>public/js/materialize.js"></script>
         <script type="text/javascript" src="<?= base_url()?>public/js/login.js"></script>
         <?php # echo $session_id = $this->session->userdata('id'); ?>
+        <nav>
+          <ul class="left hide-on-med-and-down">
+            <li><a href="<?= base_url()?>login">Home</a></li>
+            <li><a  href="<?= base_url()?>user">Create Accuount</li>
+          </ul>
+          <ul id="slide-out" class="side-nav">
+            <li><a href="<?= base_url()?>login">Home</a></li>
+            <li><a  href="<?= base_url()?>user">Create Accuount</li>
+          </ul>
+          <a  href="#" data-activates="slide-out" class="button-collapse"><i class="mdi-navigation-menu"></i></a>
+        </nav>
+        <script type="text/javascript">
+        $('.button-collapse').sideNav('show');
+        // Hide sideNav
+        $('.button-collapse').sideNav('hide');
 
+          $('.button-collapse').sideNav({
+              menuWidth: 300,
+              edge: 'left',
+              closeOnClick: true
+            }
+          );
+        </script>
         <div class="row">
             <form class="col s6" method="post" action="user/create">
               <div class="row">

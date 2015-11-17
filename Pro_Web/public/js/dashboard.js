@@ -8,3 +8,8 @@ $('.button-collapse').sideNav('hide');
       closeOnClick: true // Closes side-nav on <a> clicks, useful for Angular/Meteor
     }
   );
+  function seeContent() {
+    alert("hi");
+      var x = document.getElementById("select").value;
+      document.getElementById("text").innerHTML = ": " + x;
+  };

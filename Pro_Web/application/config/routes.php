@@ -43,6 +43,7 @@ $route['404_override'] = '';
 $route['login'] = "login/index/";
 $route['user'] = "user";
 $route['mail'] = "mail";
+$route['delete'] = "mail";
 #$route['dashboard'] = "dashboard";
 
 /* End of file routes.php */

@@ -14,7 +14,10 @@ if (!$this->session->userdata('login')) {
   }
 
   public function index(){
-  header("Location: http://localhost/mail/getMailSent");
+    $this->load->model('mail_model', 'mail');
+  	$id=$this->session->userdata('id');
+  	$datos['mail'] =$this->mail->getMailSent($id);
+  	$this->load->view('dashboard', $datos);
   }
 
 }
