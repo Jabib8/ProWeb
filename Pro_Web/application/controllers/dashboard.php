@@ -19,5 +19,11 @@ if (!$this->session->userdata('login')) {
   	$datos['mail'] =$this->mail->getMailSent($id);
   	$this->load->view('dashboard', $datos);
   }
-
+public function tableSent()
+{
+  $this->load->model('mail_model', 'mail');
+  $id=$this->session->userdata('id');
+  $datos['mail'] =$this->mail->getMailSent($id);
+  $this->load->view('tableSent', $datos);
+}
 }
