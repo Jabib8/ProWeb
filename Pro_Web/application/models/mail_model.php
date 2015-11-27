@@ -32,6 +32,15 @@ public function delete($id)
 {
 	$this->db->delete('mail', array('id_mail' => $id));
 }
+
+public function getMailPending($id)
+{
+	$query = $this->db->query("SELECT id_mail,issue,recipent,content,state FROM mail WHERE user_id=$id and state='pending'");;
+     if( $query->num_rows > 0 )
+       return $query->result();
+     else
+       return FALSE;
+}
 /*
 public function correoVerificar($mail,$name,$id)
 {

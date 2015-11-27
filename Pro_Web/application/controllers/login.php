@@ -22,9 +22,7 @@ $this->load->library('session');
   }
 
   public function login(){
-
-
-    //Validar los campos del formulario
+//Validar los campos del formulario
     $this->form_validation->set_rules('email', 'Email', 'required|trim|xss_clean');
     $this->form_validation->set_rules('pass', 'Password', 'required|trim|xss_clean');
 
@@ -48,7 +46,6 @@ if ($ingreso!=null) {
         $data = array(
           'email' => $usr,
           'id' => $ingreso->id_user,
-          'pass' =>$pass,
           'login'=> true
         );
         $this->session->set_userdata($data);

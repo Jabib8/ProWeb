@@ -15,15 +15,22 @@ if (!$this->session->userdata('login')) {
 
   public function index(){
     $this->load->model('mail_model', 'mail');
-  	$id=$this->session->userdata('id');
-  	$datos['mail'] =$this->mail->getMailSent($id);
-  	$this->load->view('dashboard', $datos);
+  	#$id=$this->session->userdata('id');
+  	#$datos['mail'] =$this->mail->getMailSent($id);
+  	$this->load->view('dashboard');
   }
 public function tableSent()
 {
   $this->load->model('mail_model', 'mail');
   $id=$this->session->userdata('id');
   $datos['mail'] =$this->mail->getMailSent($id);
+  $this->load->view('tableSent', $datos);
+}
+public function tablePending()
+{
+  $this->load->model('mail_model', 'mail');
+  $id=$this->session->userdata('id');
+  $datos['mail'] =$this->mail->getMailPending($id);
   $this->load->view('tableSent', $datos);
 }
 }

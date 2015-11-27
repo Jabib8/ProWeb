@@ -15,11 +15,8 @@
 <script type="text/javascript" src="<?= base_url()?>public/js/dashboard.js"></script>
 <nav>
   <ul  class="left hide-on-med-and-down">
-    <li><a class="dropdown-button" href="#!" data-activates="dropdown1">Home<i class="mdi-navigation-arrow-drop-down right"></i></a></li>
-  <ul id='dropdown1' class='dropdown-content'>
-    <li><a onclick="tableSent()">Sent</a></li>
-    <li><a href="#!">Pending</a></li>
-  </ul>
+  <li><a id=" sent" onclick="tableSent()">Sent</a></li>
+  <li><a onclick="tablePending()">Pending</a></li>
      <li><a  href="<?= base_url()?>mail">Create Mail</a></li>
  </ul>
  <!--<a href="#" data-activates="slide-out" class="button-collapse"><i class="mdi-navigation-menu"></i></a>-->
@@ -69,6 +66,9 @@ $('.button-collapse').sideNav('hide');
    });
    function tableSent() {
        document.getElementById('frame').src = 'dashboard/tableSent';
+   }
+   function tablePending() {
+       document.getElementById('frame').src = 'dashboard/tablePending';
    }
 </script>
 <iframe src="dashboard/tableSent" id="frame"></iframe>

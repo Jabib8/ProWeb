@@ -27,18 +27,26 @@
   $(document).ready(function() {
      $('select').material_select();
    });
+function setValuebtn(id) {
+  document.getElementById("btnDelete").value = id;
 
+}
+function deleteMail() {
+  var id=document.getElementById("btnDelete").value;
+  //sentalert("<?php echo base_url()?>mail/delete/"+id+"");
+ location.href="<?php echo base_url()?>mail/delete/"+id+"";
+}
 </script>
 <div id="left">
 <div class="col s12" >
-  <h3 id="sent" class="page-header">Sent</h3>
+<!--  <h3 id="sent" class="page-header">Sent</h3>-->
   <div class="input-field col s8 center">
 <select class="browser-default" id="select" onchange="seeContent()" >
 <option value="" disabled selected>Select a mail</option>
   <?php
     foreach ($mail as $fila) {
       ?>
-<option value="<?php echo "<h6>from:$fila->issue</h6> \n
+<option onclick="setValuebtn(<?php echo $fila->id_mail?>)" value="<?php echo "<h6>from:$fila->issue</h6> \n
    <h4>$fila->content</h5>"?>"><?php echo $fila->recipent?></option>
 <?php
 }
@@ -60,7 +68,7 @@
               <!--<tr onclick="Materialize.toast('<?php echo $fila->content?> ', 4000)">-->
               <tr onclick="seeContentF('<?php echo $fila->issue?>' , '<?php echo $fila->content?>')">
                 <td><?php echo $fila->recipent?></td>
-                <td><a href="mail/delete/<?php echo $fila->id_mail?>">Delete!</a></td>
+                <td><a href="<?php echo base_url()?>mail/delete/<?php echo $fila->id_mail?>">Delete!</a></td>
               </tr>
               <?php
             }
@@ -77,7 +85,7 @@
         </div>
         <div class="center" id="text"></div>
         <div class="center">
-          <button type="button" class="btn waves center" id="btnDelete">Delete</button>
+          <button value="1" type="button" onclicK="deleteMail()" class="btn waves center" id="btnDelete">Delete</button>
         </div>
     </div>
     </div>
