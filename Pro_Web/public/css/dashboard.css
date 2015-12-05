@@ -6,6 +6,14 @@
 #sent:active {
 background-color: red;
 }
+
+#divformEdit{
+	width: 50%;
+	align:center;
+}
+#formEdit{
+padding: 10%;
+}
 @media only screen and (max-width: 1366px) and (min-width: 981px) {
 	#select
 	{

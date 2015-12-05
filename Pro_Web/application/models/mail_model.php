@@ -22,7 +22,8 @@ public function create($issue, $recipent,$content,$id_user)
 }
 public function getMailSent($id)
 {
-	$query = $this->db->query("SELECT id_mail,issue,recipent,content,state FROM mail WHERE user_id=$id and state='sent'");;
+	$query = $this->db->query("SELECT id_mail,issue,recipent,content,state FROM mail WHERE
+		 user_id=$id and state='sent'");;
      if( $query->num_rows > 0 )
        return $query->result();
      else
@@ -35,49 +36,34 @@ public function delete($id)
 
 public function getMailPending($id)
 {
-	$query = $this->db->query("SELECT id_mail,issue,recipent,content,state FROM mail WHERE user_id=$id and state='pending'");;
+	$query = $this->db->query("SELECT id_mail,issue,recipent,content,state FROM mail WHERE user_id=$id
+		and state='pending'");;
      if( $query->num_rows > 0 )
        return $query->result();
      else
        return FALSE;
 }
-/*
-public function correoVerificar($mail,$name,$id)
+public function getInfo($id)
 {
-
-  $this->load->library("email");
-  $configGmail = array(
-    'protocol' => 'smtp',
-    'smtp_host' => 'ssl://smtp.gmail.com',
-    'smtp_port' => 465,
-    'smtp_user' => 'jabibleiton@gmail.com',
-    'smtp_pass' => '24947783',
-    'mailtype' => 'html',
-    'charset' => 'utf-8',
-    'newline' => "\r\n"
-  );
-  $this->email->initialize($configGmail);
-  $this->email->from('SafeMail');
-  $this->email->to($mail);
-  $this->email->subject('Verificacion');
-  $this->email->message('Hi '.$name.'<br> <h2>Vaya al link para verificar su cuenta.</h2><br>
-  <a href="localhost/user/check/'.$id.'">Verificar!</a>'  );
-  $this->email->send();
+	$query = $this->db->query("SELECT id_mail,issue,recipent,content FROM mail WHERE id_mail=$id");
+     if( $query->num_rows > 0 )
+       return $query->result();
+     else
+       return FALSE;
 }
 
-public function getMaxid()
-{
-  $this->db->select_max('id_user');
-  $query = $this->db->get('users');
-$row = $query->row_array();
-  return $row['id_user'];
 
-}
-public function updateCheck($id)
+public function update($issue,$recipent,$content,$id)
 {
-  $data = array('checked' => true,);
-$this->db->where('id_user', $id);
-$this->db->update('users', $data);
-}
+/*$data = array('issue' => $issue,
+                 'recipent'=>$recipent,
+							    'content'=>$content,);
+$this->db->where('id_mail', $id);
+$this->db->update('mail', $data);
 */
+$query = $this->db->query("UPDATE mail set issue='$issue',recipent='$recipent'
+	,content='$content' WHERE id_mail=".$id.";");
+return true;
+}
+
 }

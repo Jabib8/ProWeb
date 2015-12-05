@@ -31,6 +31,7 @@ public function tablePending()
   $this->load->model('mail_model', 'mail');
   $id=$this->session->userdata('id');
   $datos['mail'] =$this->mail->getMailPending($id);
+  $edit=true;
   $this->load->view('tableSent', $datos);
 }
 }

@@ -48,4 +48,21 @@ class mail extends CI_Controller {
 	$this->mail->delete($id);
 	  header("Location: http://localhost/dashboard/tableSent");
 	}
+
+	public function edit($id)
+	{
+			$this->load->model('mail_model', 'mail');
+			$datos['mail']=$this->mail->getInfo($id);
+		$this->load->view('edit',$datos);
+	}
+	public function update()
+	{
+		$issue = $this->input->post('issue');
+		$id = $this->input->post('id');
+		$recipent = ($this->input->post('recipent'));
+		$content = ($this->input->post('content'));
+   $this->load->model('mail_model', 'mail');
+	 $this->mail->update($issue,$recipent,$content,$id);
+	 	  header("Location: http://localhost/dashboard/tablePending");
+	}
 }
