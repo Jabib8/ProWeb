@@ -6,7 +6,7 @@
           <link rel="stylesheet" href="<?= base_url()?>public/css/materialize.min.css">
           <link rel="stylesheet" href="<?= base_url()?>public/css/materialize.css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <!--  <link rel="stylesheet" href="<?=  base_url()?>public/css/login.css"/>-->
+  <link rel="stylesheet" href="<?=  base_url()?>public/css/dashboard.css"/>
       </head>
       <body >
         <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
@@ -68,6 +68,7 @@
         </div>
               </div>
             </form>
+            <h6><?php echo $message ?></h6>
           </div>
       </body>
   </html>

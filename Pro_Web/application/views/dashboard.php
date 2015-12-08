@@ -8,16 +8,16 @@
 <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
  <link rel="stylesheet" href="<?=  base_url()?>public/css/dashboard.css"/>
 </head>
-<body >
+<body onload="start()" >
 <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
 <script type="text/javascript" src="<?= base_url()?>public/js/materialize.min.js"></script>
 <script type="text/javascript" src="<?= base_url()?>public/js/materialize.js"></script>
 <script type="text/javascript" src="<?= base_url()?>public/js/dashboard.js"></script>
 <nav>
   <ul  class="left hide-on-med-and-down">
-  <li><a id=" sent" onclick="tableSent()">Sent</a></li>
-  <li><a onclick="tablePending()">Pending</a></li>
-     <li><a  href="<?= base_url()?>mail">Create Mail</a></li>
+  <li><a id="sent" onclick="tableSent()">Sent</a></li>
+  <li><a id="pending" onclick="tablePending()">Pending</a></li>
+     <li><a  id="create"  onclick="create()">Create Mail</a></li>
  </ul>
  <!--<a href="#" data-activates="slide-out" class="button-collapse"><i class="mdi-navigation-menu"></i></a>-->
 
@@ -38,7 +38,7 @@
       </li>
     </ul>
   </li>
-    <li><a  href="<?= base_url()?>mail">Create Mail</a></li>
+    <li><a onclick="create()">Create Mail</a></li>
     <li><a href="<?= base_url()?>login">log out</a></li>
   </ul>
   <a  href="#" data-activates="slide-out" class="button-collapse"><i class="mdi-navigation-menu"></i></a>
@@ -61,13 +61,30 @@ $('.button-collapse').sideNav('hide');
       var y = content;
       document.getElementById("text").innerHTML ='<h6>from: '+x+'</h6>'+'<h5>'+y+'</h5>';
   }
+  function create() {
+     document.getElementById('create').style.background='#2bbbad';
+     document.getElementById('pending').style.background='#ee6e73';
+     document.getElementById('sent').style.background='#ee6e73';
+    document.getElementById('frame').src = 'mail';
+  }
+  function start(argument) {
+    document.getElementById('create').style.background='#ee6e73';
+    document.getElementById('pending').style.background='#ee6e73';
+    document.getElementById('sent').style.background='#ee6e73';
+  }
   $(document).ready(function() {
      $('select').material_select();
    });
    function tableSent() {
+     document.getElementById('pending').style.background='#ee6e73';
+     document.getElementById('create').style.background='#ee6e73';
+     document.getElementById('sent').style.background='#2bbbad';
        document.getElementById('frame').src = 'dashboard/tableSent';
    }
    function tablePending() {
+      document.getElementById('pending').style.background='#2bbbad';
+      document.getElementById('sent').style.background='#ee6e73';
+      document.getElementById('create').style.background='#ee6e73';
        document.getElementById('frame').src = 'dashboard/tablePending';
    }
 </script>

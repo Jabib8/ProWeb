@@ -27,6 +27,22 @@ margin-right: -27px;
 margin: 0 auto;
 color: white;
 }
+@media only screen and (max-width: 1366px) and (min-width: 981px) {
+#create{
+  display: none;
+}
+
+}
+@media only screen and (max-width: 980px) and (min-width: 100px) {
+
+#right{
+	display: none;
+}
+#left{
+	width: 100%;
+}
+
+}
 #frlog,.label{
 color: white;
 margin: 10 auto;

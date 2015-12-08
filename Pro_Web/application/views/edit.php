@@ -36,23 +36,25 @@ var id=document.getElementById("btnDelete").value;
 //sentalert("<?php echo base_url()?>mail/delete/"+id+"");
 location.href="<?php echo base_url()?>mail/delete/"+id+"";
 }
+$('#content').val('New Text');
+$('#content').trigger('autoresize');
 </script>
 <?php
 foreach ($mail as $fila) {
 ?>
 <div align="center" class="" id="divformEdit" >
-  <form id="frlog" class="col s6"  action="<?php echo base_url()?>mail/update" method="post">
-    <input name="id" value="<?php echo $fila->id_mail?>">
+  <form id="frlog" class="col s10"  action="<?php echo base_url()?>mail/update" method="post">
+    <input id="id_mail" name="id" value="<?php echo $fila->id_mail?>">
     <div class="row">
  <div class="row">
-   <div class="input-field col s5">
+   <div class="input-field col s6">
    <i class="material-icons prefix">account_circle</i>
    <input id="issue" name="issue" type="text" value="<?php echo $fila->issue?>" class="validate" required>
    <label for="issue" >Issue</label>
  </div>
 </div>
  <div class="row">
-   <div class="input-field col s5">
+   <div class="input-field col s7">
    <i class="material-icons prefix">error_outline</i>
    <input id="recipent" name="recipent" type="text" value="<?php echo $fila->recipent?>" class="validate" required>
    <label id="label" for="recipent">Recipent</label>
@@ -61,7 +63,7 @@ foreach ($mail as $fila) {
 <div class="row">
   <div class="input-field col s8">
   <i class="material-icons prefix">mode_edit</i>
-  <input type="text"  id="content" name="content" value="<?php echo $fila->content?>"  required></input>
+  <textarea type="text" class="materialize-textarea" id="content" name="content"  required><?php echo $fila->content?></textarea>
   <label style="font-size:18pt;" for="textarea2">Content</label>
   </div>
 </div>

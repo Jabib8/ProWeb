@@ -27,7 +27,11 @@ $this->load->library('session');
     $this->form_validation->set_rules('pass', 'Password', 'required|trim|xss_clean');
 
     if ($this->form_validation->run() == false) {
-      $this->load->view('login');
+      $data1 = array(
+        'message' => ' '
+      );
+      $this->load->view('login',$data1);
+
     }
     else{
       //Asignar variables a lo obtenido desde el formulario
@@ -35,12 +39,24 @@ $this->load->library('session');
       $pass = ($this->input->post('pass'));
       $ingreso = $this->login_model->login($usr, md5($pass));
       $num=0;
-if ($ingreso!=null) {
+if ($ingreso!=false) {
   $num=1;
 }
       switch ($num){
         case 0:
-          header("Location: http://localhost/login");
+        if ($this->login_model->errorLogin($usr, md5($pass))==true) {
+          $data = array(
+            'message' => 'Account not verify'
+          );
+        }
+        else{
+          $data = array(
+            'message' => 'Username or password incorrect'
+          );
+        }
+
+        $this->load->view('login',$data);
+        #  header("Location: http://localhost/login");
         break;
         case 1:
         $data = array(
@@ -54,6 +70,5 @@ if ($ingreso!=null) {
 
     }
   }
-
   }
 }

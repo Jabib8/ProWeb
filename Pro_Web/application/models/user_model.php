@@ -21,6 +21,15 @@ public function create($name, $last_name,$email,$pass)
 
   #function correoVerificar($email);
 }
+public function verifyEmail($value)
+{
+	$query = $this->db->query("SELECT * FROM users WHERE
+		 email='$value'");
+     if( $query->num_rows <= 0 )
+       return false;
+     else
+       return true;
+}
 public function correoVerificar($mail,$name,$id)
 {
 

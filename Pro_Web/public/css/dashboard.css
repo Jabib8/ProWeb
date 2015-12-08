@@ -1,14 +1,30 @@
+body{
+	background-color: #263238;
+	color: white;
+}
 #frame{
 	width:100%;
 	height:550px;
 	border: none;
 }
-#sent:active {
-background-color: red;
+#message{
+	color :red;
 }
+  #sent{
 
+	}
+.sortable a:hover {
+    cursor: pointer;
+}
+#id_mail{
+	display: none;
+}
+#text1{
+	width: 100%;
+
+}
 #divformEdit{
-	width: 50%;
+	width: 100%;
 	align:center;
 }
 #formEdit{
@@ -32,7 +48,12 @@ padding: 10%;
 	#table_sent{
 	display: none;
 	}
-
+#right{
+	display: none;
+}
+#left{
+	width: 100%;
+}
 	#select{
 		font-size: 25px;
 		border-radius: 0;

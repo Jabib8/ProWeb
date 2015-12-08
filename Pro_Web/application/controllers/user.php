@@ -23,10 +23,10 @@ class user extends CI_Controller {
 	 }
 	public function index()
 	{
-		#if (!$this->session->userdata('login')) {
-		#		header("Location: http://localhost/login");
-		#}
-		$this->load->view('createAccount');
+		$data1 = array(
+			'message' => ' '
+		);
+		$this->load->view('createAccount',$data1);
 	}
 	 public function create()
 	{
@@ -35,15 +35,28 @@ class user extends CI_Controller {
 		$last_name = ($this->input->post('last_name'));
 		$email = ($this->input->post('email'));
 		$pass = ($this->input->post ('pass'));
-		$this->user->create($name, $last_name,$email,md5($pass));
-	$id= 	$this->user->getMaxid();
-		$this->user->correoVerificar($email,$name,$id);
+		if ($this->user->verifyEmail($email)==false) {
+			$this->user->create($name, $last_name,$email,md5($pass));
+		$id= 	$this->user->getMaxid();
+			$this->user->correoVerificar($email,$name,$id);
+		}else {
+			$data1 = array(
+				'message' => 'Mail address already exists!'
+			);
+				$this->load->view('createAccount',$data1);
+		}
+
 	}
 
 public function check($id)
 {
 	$this->load->model('user_model', 'user');
 	$this->user->updateCheck($id);
+	$data1 = array(
+		'message' => 'Verified account! '
+	);
+#	$this->load->view('login',$data1);
+	header("Location: http://localhost/login?$data");
 }
 
 

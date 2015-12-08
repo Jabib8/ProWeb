@@ -43,8 +43,10 @@
        </div>
           </div>
             </form>
+              <a id="create" href="<?= base_url()?>user">Create a new account?</a>
             <?= form_close(); ?>
            <?= validation_errors(); ?>
+           <p id="message"><?php echo $message ?></p>
           </div>
 
   <div id="right" >

@@ -27,11 +27,22 @@ class login_model extends CI_Model {
      $this->db->where('checked', true);
      $query = $this->db->get('users');
      if ($query->num_rows() == 0) :
-       return null;
+       return false;
      else :
        return $query->row();
      endif;
    }
+	 function errorLogin($usr, $pass) {
+		 $this->db->where('email', $usr);
+		$this->db->where('password', $pass);
+		 $this->db->where('checked', false);
+		 $query = $this->db->get('users');
+		 if ($query->num_rows() == 0) :
+			 return false;
+		 else :
+			 return true;
+		 endif;
+	 }
 
 }
 

@@ -22,6 +22,11 @@ document.getElementById("text").innerHTML = x;
 function seeContentF(fr,content) {
 var x = fr;
 var y = content;
+for (var i = 0; i < y.length; i++) {
+  if (y[i]=='\n') {
+    y[i]='</br>';
+  }
+}
 document.getElementById("text").innerHTML ='<h6>from: '+x+'</h6>'+'<h5>'+y+'</h5>';
 }
 $(document).ready(function() {
@@ -36,6 +41,7 @@ var id=document.getElementById("btnDelete").value;
 //sentalert("<?php echo base_url()?>mail/delete/"+id+"");
 location.href="<?php echo base_url()?>mail/delete/"+id+"";
 }
+
 </script>
 <div id="left">
 <div class="col s12" >
@@ -69,10 +75,15 @@ foreach ($mail as $fila) {
         <!--<tr onclick="Materialize.toast('<?php echo $fila->content?> ', 4000)">-->
         <tr id=" <?php $fila->id_mail;?>" onclick="seeContentF('<?php echo $fila->issue?>' , '<?php echo $fila->content?>')">
           <td><?php echo $fila->recipent?></td>
-          <td><a href="<?php echo base_url()?>mail/delete/<?php echo $fila->id_mail?>">Delete!</a></td>
+          <td>
+        <a class="waves-effect waves-light btn red" href="<?php echo base_url()?>mail/delete/<?php echo $fila->id_mail?>"
+              ><i class="material-icons left">delete</i>Delete</a>
+          </td>
           <?php
           if($state=="pending"){?>
-         <td><a href="<?php echo base_url()?>mail/edit/<?php echo $fila->id_mail?>">Edit!</a></td>
+         <td>
+           <a  class="waves-effect waves-light btn blue" href="<?php echo base_url()?>mail/edit/<?php echo $fila->id_mail?>"
+                 ><i class="material-icons left">delete</i>Edit</a></td>
       <?php  }?>
         </tr>
         <?php
@@ -88,7 +99,7 @@ foreach ($mail as $fila) {
       </tbody>
     </table>
   </div>
-  <div class="center" id="text"></div>
+  <div class="center col s10" id="text"></div>
   <div class="center">
     <button value="1" type="button" onclicK="deleteMail()" class="btn waves center" id="btnDelete">Delete</button>
   </div>

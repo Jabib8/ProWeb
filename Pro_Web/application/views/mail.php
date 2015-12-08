@@ -6,29 +6,16 @@
         <link rel="stylesheet" href="<?= base_url()?>public/css/materialize.min.css">
         <link rel="stylesheet" href="<?= base_url()?>public/css/materialize.css">
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-  <!--  <link rel="stylesheet" href="<?=  base_url()?>public/css/login.css"/>-->
+<link rel="stylesheet" href="<?=  base_url()?>public/css/dashboard.css"/>
     </head>
     <body >
       <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
       <script src="<?= base_url()?>public/js/materialize.min.js"></script>
       <script src="<?= base_url()?>public/js/materialize.js"></script>
       <script type="text/javascript" src="<?= base_url()?>public/js/login.js"></script>
-      <nav>
-        <ul class="left hide-on-med-and-down">
-          <li><a href="<?= base_url()?>dashboard">Home</a></li>
-          <li><a  href="<?= base_url()?>mail">Create Mail</a></li>
-        </ul>
-        <ul class="right hide-on-med-and-down">
-          <li><a href="<?= base_url()?>login">log out</a></li>
-        </ul>
-        <ul id="slide-out" class="side-nav">
-          <li><a href="<?= base_url()?>dashboard">Home</a></li>
-          <li><a  href="<?= base_url()?>mail">Create Mail</a></li>
-          <li><a href="<?= base_url()?>login">log out</a></li>
-        </ul>
-        <a  href="#" data-activates="slide-out" class="button-collapse"><i class="mdi-navigation-menu"></i></a>
-      </nav>
+
       <script type="text/javascript">
+      ///////7jjjjjjjjjjjjjjjjjjjjjjjj
       $('.button-collapse').sideNav('show');
       // Hide sideNav
       $('.button-collapse').sideNav('hide');
@@ -42,24 +29,24 @@
       </script>
       <div class="center">
 <fieldset class="flow-text" style=" margin-left: 5%;margin-right: 5%; border: none;">
-      <form id="frlog" class="col s6"  action="mail/create" method="post">
+      <form id="frlog" class="col s12"  action="mail/create" method="post">
         <div class="row">
      <div class="row">
-       <div class="input-field col s5">
+       <div class="input-field col s8">
        <i class="material-icons prefix">account_circle</i>
        <input id="issue" name="issue" type="text" class="validate" required>
        <label for="issue" >Issue</label>
      </div>
     </div>
      <div class="row">
-       <div class="input-field col s5">
+       <div class="input-field col s9">
        <i class="material-icons prefix">error_outline</i>
        <input id="recipent" name="recipent" type="text" class="validate" required>
        <label id="label" for="recipent">Recipent</label>
      </div>
     </div>
     <div class="row">
-      <div class="input-field col s8">
+      <div class="input-field col s10">
       <i class="material-icons prefix">mode_edit</i>
       <textarea style="font-size:18pt;" id="content" name="content" class="materialize-textarea" required></textarea>
       <label style="font-size:18pt;" for="textarea2">Content</label>
